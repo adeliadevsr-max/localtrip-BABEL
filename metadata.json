@@ -1,0 +1,6 @@
+{
+  "name": "LocalTrip Babel",
+  "description": "Platform SaaS pemandu wisata lokal, kuliner khas, dan perencana trip pintar berbasis budget untuk wilayah Bangka Belitung.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
