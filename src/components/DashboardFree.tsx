@@ -4,24 +4,34 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Compass, Sparkles, MapPin, Clock, BadgeDollarSign, ChevronRight, LogOut, Loader, Heart, X } from 'lucide-react';
+import { Compass, Sparkles, MapPin, Clock, BadgeDollarSign, ChevronRight, LogOut, Loader, Heart, X, Menu, Palmtree, Waves, ShieldCheck, Sun, Moon, HelpCircle } from 'lucide-react';
 import { Wisata } from '../types';
 import { getSpotImageUrl } from '../utils/images';
+import BrandLogo from './BrandLogo';
+import TravelMap from './TravelMap';
 
 interface DashboardFreeProps {
   user: { username: string; email: string; tier: 'free' | 'premium' };
   token: string;
   onLogout: () => void;
   onUpgradeSuccess: (token: string, user: any) => void;
+  darkMode: boolean;
+  onToggleDarkMode: () => void;
 }
 
-export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess }: DashboardFreeProps) {
+export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess, darkMode, onToggleDarkMode }: DashboardFreeProps) {
   const [selectedRegion, setSelectedRegion] = useState<'Bangka' | 'Belitung'>('Belitung');
   const [selectedSubRegion, setSelectedSubRegion] = useState<'semua' | 'pangkalpinang' | 'bangka_induk' | 'bangka_selatan'>('semua');
   const [selectedCategory, setSelectedCategory] = useState<'pantai' | 'restoran' | 'cafe' | 'spot_foto'>('pantai');
   const [rekomendasi, setRekomendasi] = useState<Wisata[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  
+  // Live Map switcher toggle for Free users
+  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
+  
+  // Collapsible Action Menu state
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   
   // Upgrade state
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
@@ -134,61 +144,154 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FAF9F5] via-[#F4F7F6] to-[#E9EFF1] flex flex-col font-sans relative overflow-x-hidden" id="dashboard-free-root">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans relative overflow-x-hidden" id="dashboard-free-root">
       
-      {/* Decorative Beach & Ocean Theme background blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Modern Gen-Z Elegant Beach Backdrop */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=1920&q=80" 
+          alt="Bangka Belitung Beach Background" 
+          className="w-full h-full object-cover opacity-[0.05] filter saturate-150 brightness-110"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#FAF9F5]/90 via-[#F4F7F6]/95 to-[#E9EFF1]/90 z-0"></div>
+
+        {/* Ambient Blurry Beach Blobs */}
         <div className="absolute top-1/4 -left-24 w-96 h-96 rounded-full bg-emerald-500/5 blur-[100px]"></div>
         <div className="absolute bottom-1/4 -right-12 w-[450px] h-[450px] rounded-full bg-amber-400/5 blur-[120px]"></div>
         <div className="absolute top-10 right-1/4 w-80 h-80 rounded-full bg-blue-400/5 blur-[100px]"></div>
 
-        {/* Soft, beautiful ocean wave SVG patterns at the top and bottom with very low opacity */}
-        <svg className="absolute top-0 left-0 right-0 w-full h-80 text-emerald-500/[0.02] fill-current" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        {/* Soft, beautiful ocean wave SVG patterns */}
+        <svg className="absolute top-0 left-0 right-0 w-full h-80 text-emerald-500/[0.012] fill-current" viewBox="0 0 1440 320" preserveAspectRatio="none">
           <path d="M0,160 L60,170.7 C120,181,240,203,360,181.3 C480,160,600,96,720,85.3 C840,75,960,117,1080,128 C1200,139,1320,117,1380,106.7 L1440,96 L1440,0 L1380,0 C1320,0,1200,0,1080,0 C960,0,840,0,720,0 C600,0,480,0,360,0 C240,0,120,0,60,0 L0,0 Z"></path>
         </svg>
 
-        <svg className="absolute bottom-0 left-0 right-0 w-full h-40 text-emerald-600/[0.03] fill-current" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <svg className="absolute bottom-0 left-0 right-0 w-full h-40 text-emerald-600/[0.02] fill-current" viewBox="0 0 1440 200" preserveAspectRatio="none">
           <path d="M0,96 L48,112 C96,128,192,160,288,165.3 C384,171,480,149,576,122.7 C672,96,768,64,864,80 C960,96,1056,160,1152,176 C1248,192,1344,160,1392,144 L1440,128 L1440,200 L1392,200 C1344,200,1248,200,1152,200 C1056,200,960,200,864,200 C768,200,672,200,576,200 C480,200,384,200,288,200 C192,200,96,200,48,200 L0,200 Z"></path>
         </svg>
       </div>
 
       <div className="relative z-10 flex flex-col flex-1">
-        {/* Header */}
-      <nav className="sticky top-0 z-40 bg-white border-b border-slate-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-2">
-          <div className="p-2 bg-emerald-600 rounded-xl text-white">
-            <Compass className="w-5 h-5" />
-          </div>
-          <div>
-            <span className="font-extrabold text-base tracking-tight text-slate-900 block leading-none">LocalTrip</span>
-            <span className="text-[10px] font-bold text-emerald-600 tracking-wider">BABEL - FREE</span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div className="text-right hidden md:block">
-            <span className="text-xs text-slate-400 block">Sesi Masuk</span>
-            <span className="text-sm font-bold text-slate-800">{user.username} <span className="text-[10px] bg-slate-100 text-slate-500 font-bold px-1.5 py-0.5 rounded-full ml-1">Gratis</span></span>
+        {/* Upgraded Header with Collapsible Toggle */}
+        <nav className="sticky top-0 z-40 bg-white/80 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/80 px-6 py-4 flex justify-between items-center gap-4">
+          <div className="flex items-center gap-2">
+            <BrandLogo scrolled={true} />
           </div>
 
-          <button
-            id="btn-upgrade-nav"
-            onClick={() => setShowUpgradeModal(true)}
-            className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 px-3.5 py-2 rounded-xl transition-all shadow-xs flex items-center gap-1.5"
-          >
-            <Sparkles className="w-3.5 h-3.5 fill-amber-950/20" /> Upgrade Premium
-          </button>
+          <div className="flex items-center gap-3">
+            {/* Ambient Dark Mode Theme Toggle */}
+            <button
+              onClick={onToggleDarkMode}
+              className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-705 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer flex items-center justify-center shadow-xs"
+              title={darkMode ? "Aktifkan Mode Cahaya" : "Aktifkan Mode Gelap"}
+              id="free-navbar-theme-toggle"
+            >
+              {darkMode ? (
+                <Sun className="w-4 h-4 text-amber-400 fill-amber-400" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-500 hover:text-indigo-500" />
+              )}
+            </button>
 
-          <button
-            id="btn-logout"
-            onClick={onLogout}
-            className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-all"
-            title="Keluar Akun"
-          >
-            <LogOut className="w-4 h-4" />
-          </button>
-        </div>
-      </nav>
+            <div className="text-right hidden md:block mr-2">
+              <span className="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">MASUK SEBAGAI</span>
+              <span className="text-xs font-extrabold text-slate-800 dark:text-slate-200">{user.username}</span>
+            </div>
+
+            <button
+              id="btn-upgrade-nav"
+              onClick={() => setShowUpgradeModal(true)}
+              className="text-xs font-bold bg-amber-400 hover:bg-amber-500 text-slate-950 px-4 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1.5 hover:scale-[1.02]"
+            >
+              <Sparkles className="w-3.5 h-3.5 fill-slate-950/20" /> Premium (Rp29rb)
+            </button>
+
+            {/* Hamburger Button for Collapsible action items */}
+            <button
+              onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
+              className="p-2 text-slate-600 hover:text-emerald-600 hover:bg-slate-100/80 rounded-xl transition-all cursor-pointer border border-slate-100"
+              title="Aktivasi Pilihan Menu"
+            >
+              {isSideMenuOpen ? <X className="w-5 h-5 text-rose-600" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </nav>
+
+        {/* Collapsible Action Drawer Menu */}
+        {isSideMenuOpen && (
+          <div className="fixed inset-y-0 right-0 z-50 w-80 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border-l border-slate-200/80 dark:border-slate-800/80 shadow-2xl p-6 flex flex-col justify-between animate-fade-in relative z-50 text-slate-900 dark:text-slate-100">
+            <div>
+              <div className="flex items-center justify-between border-b border-slate-150 dark:border-slate-800 pb-4 mb-6">
+                <span className="text-xs font-black text-slate-400 dark:text-slate-400 uppercase tracking-widest flex items-center gap-1">
+                  <Palmtree className="w-3.5 h-3.5 text-emerald-600 animate-pulse" /> PANEL NAVIGASI
+                </span>
+                <button 
+                  onClick={() => setIsSideMenuOpen(false)}
+                  className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg text-slate-450 hover:text-rose-600 transition"
+                  title="Close Menu"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* User profile */}
+              <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 mb-6">
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-slate-900 dark:bg-slate-950 flex items-center justify-center font-bold text-white text-sm uppercase font-serif">
+                    {user.username.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-extrabold text-slate-900 dark:text-slate-100 leading-none">{user.username}</h4>
+                    <span className="text-[9px] font-bold text-slate-400 dark:text-slate-400 block mt-1">{user.email}</span>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center bg-white dark:bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-100 dark:border-slate-800 mt-2">
+                  <span className="text-[10px] font-bold text-slate-450">Tipe Akun:</span>
+                  <span className="text-[9px] font-extrabold text-emerald-800 bg-emerald-55 font-mono uppercase">Standard Free</span>
+                </div>
+              </div>
+
+              {/* Beach Conditions & Tips */}
+              <div className="space-y-4">
+                <div className="bg-sky-50/50 border border-sky-100/50 p-4 rounded-xl">
+                  <span className="font-bold text-sky-800 text-[9px] uppercase tracking-wider block mb-1">🌊 KONDISI PANTAI LASKAR PELANGI</span>
+                  <p className="text-[11px] text-sky-950 leading-relaxed font-sans font-medium">
+                    Sangat teduh! Pantai batu belimbing dan pesona pasir halus Laskar Pelangi sangat ideal dikunjungi sore ini.
+                  </p>
+                </div>
+
+                <div className="bg-amber-50/50 border border-amber-100/50 p-4 rounded-xl">
+                  <span className="font-bold text-amber-800 text-[9px] uppercase tracking-wider block mb-1">💡 TIPS HEMAT PENJELAJAH</span>
+                  <p className="text-[11px] text-amber-950 leading-relaxed font-sans font-medium">
+                    Selalu siapkan cash receh untuk parkir sekitar pantai & nikmati sruput kopi legendaris Kong Djie dengan segelas es jeruk kunci segar!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="space-y-3 pt-6 border-t border-slate-150">
+              <button
+                onClick={() => {
+                  setIsSideMenuOpen(false);
+                  setShowUpgradeModal(true);
+                }}
+                className="w-full py-3 bg-gradient-to-tr from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-black text-xs rounded-xl shadow-md uppercase tracking-wider flex items-center justify-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5 fill-white/10" /> UPGRADE PREMIUM (Rp29rb)
+              </button>
+              <button
+                onClick={() => {
+                  setIsSideMenuOpen(false);
+                  onLogout();
+                }}
+                className="w-full py-2.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 font-extrabold text-xs rounded-xl transition-all flex items-center justify-center gap-1"
+              >
+                <LogOut className="w-3.5 h-3.5" /> Keluar dari Sesi
+              </button>
+            </div>
+          </div>
+        )}
 
       <div className="flex-1 max-w-6xl mx-auto px-4 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
         
@@ -196,28 +299,39 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
         <main className="lg:col-span-8 space-y-8">
           
           {/* Filters card */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-            <h1 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight mb-2">Jelajahi Babel Secara Gratis</h1>
-            <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">Pilih wilayah pulau dan jenis destinasi yang ingin Anda intip. Akun gratis dibatasi melihat total data rekomendasi dasar.</p>
+          <div className="bg-white rounded-3xl border border-slate-150 p-6 md:p-8 shadow-sm relative overflow-hidden">
+            {/* Soft decorative badge */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full blur-2xl opacity-60 pointer-events-none"></div>
+
+            <h1 className="text-2xl sm:text-3xl font-serif font-black text-slate-900 tracking-tight leading-tight mb-2">Panduan Wisata Nusantara</h1>
+            <p className="text-xs text-slate-500 mb-8 leading-relaxed font-sans font-medium">Bebas pilih rute pantai pasir putih, bebatuan granit purba, serta kuliner terlezat Bangka maupun Belitung berbekal akun Penjelajah Gratis Anda.</p>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               {/* Region Selector */}
               <div>
-                <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Pulau Tujuan</span>
-                <div className="flex bg-slate-100 p-1 rounded-xl max-w-xs">
+                <span className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-2.5 font-display">TENTUKAN PULAU TUJUAN</span>
+                <div className="flex bg-slate-100 p-1.5 rounded-2xl max-w-xs border border-slate-200/50">
                   <button
                     id="filter-region-belitung"
                     onClick={() => setSelectedRegion('Belitung')}
-                    className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedRegion === 'Belitung' ? 'bg-white text-slate-950 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                    className={`flex-1 py-2.5 text-xs font-black rounded-xl transition-all uppercase tracking-wider cursor-pointer ${
+                      selectedRegion === 'Belitung' 
+                        ? 'bg-slate-950 text-white shadow-md' 
+                        : 'text-slate-500 hover:text-slate-800'
+                    }`}
                   >
-                    Belitung
+                    Belitung 🏝️
                   </button>
                   <button
                     id="filter-region-bangka"
                     onClick={() => setSelectedRegion('Bangka')}
-                    className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedRegion === 'Bangka' ? 'bg-white text-slate-955 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                    className={`flex-1 py-2.5 text-xs font-black rounded-xl transition-all uppercase tracking-wider cursor-pointer ${
+                      selectedRegion === 'Bangka' 
+                        ? 'bg-slate-950 text-white shadow-md' 
+                        : 'text-slate-555 hover:text-slate-805'
+                    }`}
                   >
-                    Bangka
+                    Bangka 🌊
                   </button>
                 </div>
               </div>
@@ -225,19 +339,23 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
               {/* Bangka Sub-Region Selector */}
               {selectedRegion === 'Bangka' && (
                 <div>
-                  <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 animate-fade-in">Filter Wilayah Bangka</span>
+                  <span className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-2 animate-fade-in font-display">FILTER WILAYAH BANGKA</span>
                   <div className="flex flex-wrap gap-2 animate-fade-in">
                     {[
-                      { id: 'semua', label: 'Semua Bangka' },
-                      { id: 'pangkalpinang', label: 'Pangkalpinang (Pusat)' },
-                      { id: 'bangka_induk', label: 'Bangka / Sungailiat' },
-                      { id: 'bangka_selatan', label: 'Bangka Selatan (Toboali)' }
+                      { id: 'semua', label: 'Semua Bangka 🗺️' },
+                      { id: 'pangkalpinang', label: 'Pangkalpinang (Pusat) ☕' },
+                      { id: 'bangka_induk', label: 'Bangka / Sungailiat 🐚' },
+                      { id: 'bangka_selatan', label: 'Bangka Selatan (Toboali) 🍇' }
                     ].map((sub) => (
                       <button
                         key={sub.id}
                         id={`filter-sub-${sub.id}`}
                         onClick={() => setSelectedSubRegion(sub.id as any)}
-                        className={`px-3 py-1.5 text-xs font-bold rounded-xl border transition-all cursor-pointer ${selectedSubRegion === sub.id ? 'bg-emerald-600 border-emerald-700 text-white shadow-xs' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'}`}
+                        className={`px-4 py-2 text-xs font-bold rounded-2xl border transition-all cursor-pointer ${
+                          selectedSubRegion === sub.id 
+                            ? 'bg-emerald-600 border-emerald-550 text-white shadow-md' 
+                            : 'bg-slate-50 border-slate-205 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
+                        }`}
                       >
                         {sub.label}
                       </button>
@@ -248,16 +366,25 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
 
               {/* Category Selector */}
               <div>
-                <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Kategori Destinasi</span>
-                <div className="flex flex-wrap gap-2">
-                  {(['pantai', 'restoran', 'cafe', 'spot_foto'] as const).map((cat) => (
+                <span className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-2.5 font-display">KATEGORI DESTINASI</span>
+                <div className="flex flex-wrap gap-2.5">
+                  {[
+                    { cat: 'pantai', label: 'Pantai Indah 🌴' },
+                    { cat: 'restoran', label: 'Kuliner Lokal 🍲' },
+                    { cat: 'cafe', label: 'Tempat Kopi ☕' },
+                    { cat: 'spot_foto', label: 'Pesona Foto 📸' }
+                  ].map(({ cat, label }) => (
                     <button
                       key={cat}
                       id={`filter-cat-${cat}`}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`px-4 py-2 text-xs font-bold rounded-xl border transition-all uppercase tracking-wide cursor-pointer ${selectedCategory === cat ? 'bg-slate-900 border-slate-950 text-white shadow-xs' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300'}`}
+                      onClick={() => setSelectedCategory(cat as any)}
+                      className={`px-5 py-3 text-xs font-black rounded-2xl border transition-all uppercase tracking-wider cursor-pointer font-sans ${
+                        selectedCategory === cat 
+                          ? 'bg-slate-900 border-slate-950 text-white shadow-md shadow-slate-900/10' 
+                          : 'bg-white border-slate-200 text-slate-650 hover:bg-slate-100/50 hover:border-slate-300'
+                      }`}
                     >
-                      {cat.replace('_', ' ')}
+                      {label}
                     </button>
                   ))}
                 </div>
@@ -267,25 +394,72 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
 
           {/* Results list */}
           <div>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-sm sm:text-base font-bold text-slate-800">
-                Rekomendasi di {selectedRegion} {selectedRegion === 'Bangka' && selectedSubRegion !== 'semua' ? ' - ' + selectedSubRegion.replace('_', ' ').toUpperCase() : ''} <span className="text-xs text-slate-400">({filteredRekomendasi.length} ditemukan)</span>
-              </h2>
-              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Batas Tier Free (Maks 8)</span>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 bg-slate-100/40 dark:bg-slate-900/30 p-4 rounded-2.5xl border border-slate-205/10">
+              <div className="flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-black text-slate-900 dark:text-slate-100 font-serif leading-none">
+                  Rekomendasi di {selectedRegion} {selectedRegion === 'Bangka' && selectedSubRegion !== 'semua' ? ' - ' + selectedSubRegion.replace('_', ' ').toUpperCase() : ''}
+                </h2>
+                <span className="text-xs text-slate-400">({filteredRekomendasi.length} ditemukan)</span>
+              </div>
+              
+              <div className="flex items-center gap-3.5 w-full sm:w-auto self-stretch sm:self-auto justify-between sm:justify-end">
+                <div className="flex bg-slate-200/70 dark:bg-slate-950/80 p-1 rounded-xl border border-slate-250/15 shrink-0 select-none">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`px-3 py-1.5 text-[9.5px] font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
+                      viewMode === 'grid'
+                        ? 'bg-white dark:bg-slate-850 text-[#0D9488] dark:text-white shadow-xs'
+                        : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    Katalog Grid
+                  </button>
+                  <button
+                    onClick={() => setViewMode('map')}
+                    className={`px-3 py-1.5 text-[9.5px] font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
+                      viewMode === 'map'
+                        ? 'bg-white dark:bg-slate-850 text-[#0D9488] dark:text-white shadow-xs'
+                        : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    Satelit Map
+                  </button>
+                </div>
+                <span className="text-[9px] font-bold text-emerald-800 dark:text-emerald-450 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-1.5 rounded-md uppercase tracking-wide">Batas Tier Free (Maks 8)</span>
+              </div>
             </div>
 
             {loading ? (
-              <div className="flex flex-col items-center justify-center py-20 bg-white rounded-2xl border border-slate-200">
-                <Loader className="w-8 h-8 text-emerald-600 animate-spin mb-3" />
-                <span className="text-xs text-slate-500 font-semibold">Mengambil kurasi wisata...</span>
-              </div>
-            ) : error ? (
-              <div className="p-4 bg-rose-50 border border-rose-100 text-rose-700 text-xs rounded-xl">
-                {error}
+              <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-slate-950/40 rounded-3xl border border-slate-200/40 dark:border-slate-850 shadow-sm">
+                <Loader className="w-8 h-8 text-emerald-650 animate-spin mb-3" />
+                <span className="text-xs text-slate-400 font-bold tracking-wider font-display uppercase">MENYIAPKAN PETUALANGAN...</span>
               </div>
             ) : filteredRekomendasi.length === 0 ? (
-              <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-xs">
-                Tidak ada data wisata yang sesuai dengan kategori ini di {selectedRegion} sub-wilayah saat ini.
+              <div className="p-12 text-center bg-white dark:bg-slate-950/40 rounded-3xl border border-slate-150 dark:border-slate-855 text-slate-400 text-xs font-sans font-semibold">
+                Tidak ada data wisata yang sesuai dengan saringan sub-wilayah Anda saat ini.
+              </div>
+            ) : viewMode === 'map' ? (
+              <div className="w-full">
+                <TravelMap 
+                  darkMode={darkMode}
+                  spots={filteredRekomendasi.map(r => ({
+                    id: r.id,
+                    nama: r.nama,
+                    lokasi: r.lokasi,
+                    kategori: r.kategori,
+                    desc: r.deskripsi || r.tips,
+                    rating: r.rating,
+                    wilayah: selectedRegion,
+                    tipe: 'wisata' as const
+                  }))}
+                  premiumUser={false}
+                  onSelectSpot={(spot) => {
+                    const fullSpot = filteredRekomendasi.find(item => item.id === spot.id);
+                    if (fullSpot) {
+                      setSelectedSpot(fullSpot);
+                    }
+                  }}
+                />
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -294,7 +468,7 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
                     key={sport.id}
                     id={`spot-card-${sport.id}`}
                     onClick={() => handleSpotClick(sport)}
-                    className="bg-white rounded-2xl border border-slate-100 shadow-xs hover:border-emerald-500/20 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 ease-out cursor-pointer overflow-hidden flex flex-col justify-between group h-full relative"
+                    className="bg-white rounded-3xl border border-slate-150 shadow-sm hover:border-emerald-500/10 hover:shadow-2xl hover:translate-y-[-4px] transition-all duration-500 ease-out cursor-pointer overflow-hidden flex flex-col justify-between group h-full relative"
                   >
                     <div>
                       {/* Beautiful card photo segment */}
@@ -305,15 +479,15 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute top-2.5 left-2.5">
-                          <span className="text-[9px] font-bold bg-white/95 backdrop-blur-xs text-slate-700 px-2 py-0.5 rounded shadow-2xs">
-                            {selectedCategory.replace('_', ' ')}
+                        <div className="absolute top-3 left-3">
+                          <span className="text-[9px] font-extrabold bg-white/95 backdrop-blur-md text-slate-800 px-2.5 py-1.5 rounded-xl uppercase tracking-wider shadow-xs font-display">
+                            {selectedCategory}
                           </span>
                         </div>
                         {sport.tier === 'premium' && (
-                          <div className="absolute top-2.5 right-2.5">
-                            <span className="text-[9px] font-bold bg-amber-500 text-slate-950 px-2 py-0.5 rounded shadow-sm flex items-center gap-0.5 animate-pulse">
-                              💎 PREMIUM
+                          <div className="absolute top-3 right-3">
+                            <span className="text-[9px] font-black bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 px-2.5 py-1.5 rounded-xl shadow-sm flex items-center gap-1 animate-pulse tracking-wide font-display">
+                              👑 PREMIUM
                             </span>
                           </div>
                         )}
@@ -321,21 +495,21 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
 
                       <div className="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                          <span className="block text-[8px] font-bold text-slate-400 uppercase mb-1 tracking-wider">
-                            {sport.tier === 'premium' ? '👑 Premium locked' : '🆓 Free access'}
+                          <span className="block text-[8px] font-bold text-slate-400 uppercase mb-1 tracking-widest font-display">
+                            {sport.tier === 'premium' ? '👑 Premium locked' : '🆓 Pintu Terbuka'}
                           </span>
-                          <h3 className="font-serif font-bold text-slate-900 group-hover:text-emerald-700 transition-colors text-base mb-2 leading-snug">{sport.nama}</h3>
-                          <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 font-sans">{sport.deskripsi}</p>
+                          <h3 className="font-serif font-black text-slate-900 group-hover:text-emerald-700 transition-colors text-base mb-1.5 leading-snug">{sport.nama}</h3>
+                          <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 font-sans font-medium">{sport.deskripsi}</p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="px-5 pb-5 pt-3 border-t border-slate-50 flex items-center justify-between text-[10px] font-bold text-slate-400 mt-auto">
+                    <div className="px-5 pb-5 pt-3.5 border-t border-slate-50 flex items-center justify-between text-[10px] font-bold text-slate-450 mt-auto font-sans">
                       <div className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span className="line-clamp-1">{sport.lokasi}</span>
+                        <MapPin className="w-3.5 h-3.5 text-emerald-650 shrink-0" />
+                        <span className="line-clamp-1 font-medium">{sport.lokasi}</span>
                       </div>
-                      <span className="text-emerald-700 shrink-0">{sport.estimasi_biaya}</span>
+                      <span className="text-emerald-800 font-extrabold shrink-0 bg-emerald-50 px-2.5 py-1 rounded-lg">{sport.estimasi_biaya}</span>
                     </div>
                   </div>
                 ))}
@@ -582,8 +756,21 @@ export default function DashboardFree({ user, token, onLogout, onUpgradeSuccess 
       )}
 
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-200 py-6 px-4 text-center text-slate-400 text-xs">
-        <p>© 2026 LocalTrip Babel • Akun Premium Rp29.000 membuka rute, AI guide, & estimasi budget lengkap.</p>
+      <footer className="bg-slate-900 text-slate-400 py-10 px-6 mt-12 border-t border-slate-800 text-center relative z-10 rounded-t-3xl">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans">
+          <div className="text-left">
+            <span className="font-extrabold text-white text-sm block font-serif tracking-wide mb-1">babel<span className="text-emerald-400">.trip</span> 🌊</span>
+            <p className="text-slate-500 font-medium">Bangka Belitung travel system • Standard Free Access</p>
+          </div>
+          <div className="flex gap-4 text-slate-500 font-bold">
+            <button onClick={() => setShowUpgradeModal(true)} className="hover:text-emerald-400 cursor-pointer">Upgrade Premium</button>
+            <span>•</span>
+            <span className="text-slate-600">2.6167° S, 107.9125° E</span>
+          </div>
+        </div>
+        <p className="text-[10px] text-slate-600 mt-6 leading-relaxed">
+          © 2026 babel.trip. Dibuat dengan cinta untuk pariwisata Nusantara • Jaga kebersihan dan keasrian laut Bangka Belitung 💚
+        </p>
       </footer>
       </div>
     </div>

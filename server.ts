@@ -141,8 +141,8 @@ const defaultWisata = [
     nama: "Pantai Tanjung Tinggi",
     deskripsi: "Pantai ikonik berpasir seputih salju dengan ratusan bongkahan batu granit raksasa setinggi rumah yang menjadi lokasi syuting film legendaris 'Laskar Pelangi'. Air lautnya sangat tenang dan jernih seperti kolam renang alami.",
     lokasi: "Sijuk, Kabupaten Belitung",
-    estimasi_biaya: "Gratis (Hanya Parkir Rp 5.000)",
-    jam_buka: "24 Jam",
+    estimasi_biaya: "Entrance: Free (Parking fee Rp5,000)",
+    jam_buka: "Open 24 Hours (Best time: 06:00 AM - 06:00 PM)",
     tips: "Sangat aman untuk berenang bagi anak-anak. Panjat celah bebatuan granit besar di bagian kanan pantai untuk menikmati pemandangan sunset yang magis.",
     kategori: "pantai",
     wilayah: "Belitung"
@@ -152,8 +152,8 @@ const defaultWisata = [
     nama: "Pantai Tanjung Kelayang",
     deskripsi: "Semenanjung pasir putih indah yang menjadi dermaga keberangkatan utama untuk kegiatan island hopping di Belitung, berlatar pemandangan pulau batu berbentuk kepala burung Garuda.",
     lokasi: "Sijuk, Kabupaten Belitung",
-    estimasi_biaya: "Gratis (Sewa Perahu Island Hopping Rp 450.000/kapal)",
-    jam_buka: "07.00 - 18.00 WIB",
+    estimasi_biaya: "Entrance: Free / Boat Rental: Rp400,000 - Rp600,000 per boat",
+    jam_buka: "Open 24 Hours (Boat rental available morning-afternoon)",
     tips: "Sewalah perahu tradisional di pantai ini semenjak pagi hari (pukul 08.00 WIB) untuk berkeliling ke pulau-pulau eksotis di sekeliling Sijuk.",
     kategori: "pantai",
     wilayah: "Belitung"
@@ -163,8 +163,8 @@ const defaultWisata = [
     nama: "Pulau Lengkuas",
     deskripsi: "Pulau kecil tercantik di Belitung yang terkenal dengan Mercusuar bersejarah peninggalan kolonial Belanda tahun 1882 yang masih kokoh berdiri, dikelilingi taman laut terumbu karang yang menakjubkan untuk snorkeling.",
     lokasi: "Sijuk, Kabupaten Belitung",
-    estimasi_biaya: "Biaya Snorkeling + Penyeberangan (Rp 150.000/orang)",
-    jam_buka: "08.00 - 17.00 WIB",
+    estimasi_biaya: "Island Entrance: Free (Voluntary cleanliness donation)",
+    jam_buka: "Boat Access (07:00 AM - 03:00 PM)",
     tips: "Bawalah roti mentega kering untuk menarik gerombolan ikan badut dan ikan karang warna-warni saat ber-snorkeling aman di perairan dangkal.",
     kategori: "spot_foto",
     wilayah: "Belitung"
@@ -174,19 +174,19 @@ const defaultWisata = [
     nama: "Danau Kaolin Belitung",
     deskripsi: "Bekas penambangan mineral kaolin yang membentuk cekungan air biru muda laksana susu yang kontras dengan bebatuan tanah berkapur putih salju. Sangat berbeda dari bekas tambang lainnya karena tidak mengeluarkan bau belerang.",
     lokasi: "Tanjung Pandan, Kabupaten Belitung",
-    estimasi_biaya: "Gratis (Hanya Parkir Rp 5.000)",
-    jam_buka: "06.00 - 18.00 WIB",
+    estimasi_biaya: "Entrance: Rp2,000 - Rp5,000 (Local retribution fee)",
+    jam_buka: "Daily (06:00 AM - 06:00 PM)",
     tips: "Disarankan berkunjung sebelum matahari terlalu terik (pukul 08.00 WIB atau sore hari pukul 16.30 WIB) demi mendapatkan pantulan cahaya air dan langit yang maksimal.",
     kategori: "spot_foto",
     wilayah: "Belitung"
   },
   {
     id: "w15",
-    nama: "Warkop Kong Djie Sejak 1943",
-    deskripsi: "Cafe kopi saring tradisional legendaris di Belitung yang mempertahankan proses memasak kopi menggunakan arang kayu bakar dan teko kuningan tinggi sejak zaman penjajahan Belanda.",
+    nama: "Kopi Kong Djie Siburik",
+    deskripsi: "Kedai kopi legendaris Kong Djie pusat di pertigaan Siburik, Tanjung Pandan yang meracik kopi menggunakan teko tembaga kuno tinggi sejak tahun 1943 dengan keharuman gosong arang khasnya.",
     lokasi: "Tanjung Pandan, Kabupaten Belitung",
-    estimasi_biaya: "Rp 12.000 - Rp 20.000",
-    jam_buka: "06.00 - 23.00 WIB",
+    estimasi_biaya: "Rp10,000 - Rp25,000 per cup",
+    jam_buka: "Daily (06:00 AM - 12:00 AM)",
     tips: "Pesan Kopi O (Kopi Hitam Pekat) atau Kopi Susu hangat pendamping roti panggang srikayanya untuk memulai pagi hari yang menenangkan.",
     kategori: "cafe",
     wilayah: "Belitung"
@@ -196,8 +196,8 @@ const defaultWisata = [
     nama: "Mie Belitung Atep",
     deskripsi: "Warung mie paling melegenda di Belitung milik Ny. Atep, menyajikan mie kuning gurih dengan kuah kaldu udang manis kental khas Belitung, diberi topping potongan udang, emping renyah, kentang rebus, timun segar, dan dibungkus daun simpor.",
     lokasi: "Tanjung Pandan, Kabupaten Belitung",
-    estimasi_biaya: "Rp 20.000",
-    jam_buka: "08.00 - 19.30 WIB",
+    estimasi_biaya: "Rp15,000 - Rp30,000 per portion",
+    jam_buka: "Daily (08:00 AM - 08:00 PM)",
     tips: "Cicipi kuahnya yang manis gurih beraroma rempah dan nikmati kesegarannya bersamaan dengan segelas es jeruk kunci peras segar.",
     kategori: "restoran",
     wilayah: "Belitung"
@@ -207,9 +207,9 @@ const defaultWisata = [
     nama: "Rumah Adat Belitung",
     deskripsi: "Rumah panggung tradisional kayu ulin khas melayu Belitung yang megah dengan ornamen kerajinan lokal dan pakaian adat pengantin Belitung di bagian dalamnya.",
     lokasi: "Tanjung Pandan, Kabupaten Belitung",
-    estimasi_biaya: "Donasi sukarela",
-    jam_buka: "08.00 - 17.00 WIB",
-    tips: "Kita diwajibkan melepas alas kaki di tangga luar rumah panggung kayu ini untuk menghormati tradisi kesopanan lokal.",
+    estimasi_biaya: "Voluntary donation / Rp5,000",
+    jam_buka: "08:00 AM - 04:00 PM",
+    tips: "Replika rumah bangsawan melayu Belitung terbuat dari kayu besi ulin hitam. Sangat megah berciri jendela adat, ideal untuk latar potret klasik Melayu kuno.",
     kategori: "spot_foto",
     wilayah: "Belitung"
   },
@@ -245,9 +245,107 @@ const defaultWisata = [
     tips: "Sangat bagus berlatar foto matahari tenggelam di danau tenang. Lokasinya persis di seberang SD Laskar Pelangi replika.",
     kategori: "spot_foto",
     wilayah: "Belitung"
+  },
+  {
+    id: "w21",
+    nama: "RM Belitong Timpo Duluk",
+    deskripsi: "Restoran bernuansa etnik Belitung tempo dulu yang menyajikan hidangan legendaris dalam tradisi makan bersama khas Belitung bernama 'Makan Bedulang'.",
+    lokasi: "Tanjung Pandan, Kabupaten Belitung",
+    estimasi_biaya: "Bedulang Package: Rp150,000 - Rp250,000 (for 4 people)",
+    jam_buka: "Daily (11:00 AM - 09:00 PM)",
+    tips: "Pesan paket Bedulang otentik bersama teman atau keluarga dengan lauk khas gangan, sate cumi, dan sambal serai khas Melayu Belitung tempo dulu.",
+    kategori: "restoran",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w22",
+    nama: "Kampong Dedaun",
+    deskripsi: "Sebuah restoran santai tepi pantai dengan pepohonan rindang dan area beanbag nyaman di tepi laut yang tenang, menawarkan kuliner laut khas Belitung yang nikmat.",
+    lokasi: "Sijuk, Kabupaten Belitung",
+    estimasi_biaya: "Rp50,000 - Rp150,000 per person",
+    jam_buka: "Daily (10:00 AM - 09:00 PM)",
+    tips: "Sangat asyik berkunjung menjelang sore hari untuk bersantai menikmati jus kelapa muda andalan sambil menunggu pemandangan langit senja jingga damai.",
+    kategori: "restoran",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w23",
+    nama: "Pantai Burung Mandi",
+    deskripsi: "Pantai timur Belitung berlatar pemandangan Gunung Burung Mandi yang megah dengan pesona khas barisan kapal tradisional Kater nelayan penuh warna berpajangkan ornamen unik burung.",
+    lokasi: "Damar, Kabupaten Belitung Timur",
+    estimasi_biaya: "Rp5,000 (Tiket masuk)",
+    jam_buka: "24 Hours (Buka 24 Jam)",
+    tips: "Nikmati kelapa muda lokal berbaur angin sepoi di jajaran warung rakyat tepi pantai sambil memandangi hamparan laut lepas berlatar gunung.",
+    kategori: "pantai",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w24",
+    nama: "Pulau Batu Berlayar",
+    deskripsi: "Pulau pasir putih nan imut bercirikan gugusan batuan granit besar yang berdiri tegak laksana layar kapal yang sedang mengarungi kristal air laut Belitung.",
+    lokasi: "Sijuk, Kabupaten Belitung",
+    estimasi_biaya: "Termasuk Paket Perahu Island Hopping",
+    jam_buka: "Depends on sea tides (Best time: 09:00 AM - 02:00 PM)",
+    tips: "Datanglah saat pasang surut siang hari agar hamparan pasirnya timbul utuh, memberikan latar swafoto bebatuan raksasa bagaikan melayang di air jernih.",
+    kategori: "spot_foto",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w25",
+    nama: "Rumah Makan Raja Seafood Belitung",
+    deskripsi: "Spesialis hidangan laut premium nan bersih di Tanjung Pandan dengan menu andalan sup Gangan Karang kelapa muda super segar penuh rempah dambaan wisatawan.",
+    lokasi: "Tanjung Pandan, Kabupaten Belitung",
+    estimasi_biaya: "Rp40,000 - Rp120,000 per seafood menu item",
+    jam_buka: "10:00 AM - 10:00 PM",
+    tips: "Coba Gangan kepala ikan ketarap yang gurih berpadu sajian bumbu lada hitam kepiting lokal yang tebal legit.",
+    kategori: "restoran",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w26",
+    nama: "Raja Rasa Seafood",
+    deskripsi: "Menyediakan santapan ikan bakar rempah otentik dari tangkapan nelayan harian dan cumi goreng tepung krispis yang lezat persis di pesisir pantai sejuk.",
+    lokasi: "Sijuk, Kabupaten Belitung",
+    estimasi_biaya: "Rp35,000 - Rp90,000 per portion",
+    jam_buka: "08:00 AM - 07:00 PM",
+    tips: "Lokasi terbaik makan berat seafood santai seusai asyik berenang bermain air laut di sepanjang semenanjung pantai Sijuk.",
+    kategori: "restoran",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w27",
+    nama: "Batu Garuda Beach Club & Resto",
+    deskripsi: "Beach club bernuansa modern tropikal satu-satunya di seberang landmark batu mulia Batu Garuda, dilengkapi kolam renang tak bertepi dan sajian kuliner ala barat serta nusantara.",
+    lokasi: "Pantai Tanjung Kelayang, Kabupaten Belitung",
+    estimasi_biaya: "Rp35,000 - Rp120,000",
+    jam_buka: "11:00 AM - 10:00 PM",
+    tips: "Ini adalah spot paling estetik merayakan petang senja sembari meneguk jus segar bernostalgia dengan tarian laut luar.",
+    kategori: "cafe",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w28",
+    nama: "Kopi Kita Belitung",
+    deskripsi: "Coffee shop berarsitektur industrial minimalis di pusat Tanjung Pandan yang menghidangkan aneka teh artisan, racikan espresso modern, dan sajian manual brew biji lokal berkualitas tinggi.",
+    lokasi: "Tanjung Pandan, Kabupaten Belitung",
+    estimasi_biaya: "Rp20,000 - Rp45,000",
+    jam_buka: "09:00 AM - 11:00 PM",
+    tips: "Gedungnya sejuk bersahabat, sangat cocok dijadikan tempat bersinggah kerja remote laptopan (WFC) atau ngobrol intim sore hari.",
+    kategori: "cafe",
+    wilayah: "Belitung"
+  },
+  {
+    id: "w29",
+    nama: "SD Laskar Pelangi & Museum Kata",
+    deskripsi: "Replika sekolah dasar legendaris dari kayu berlantai pasir bersebelahan dengan Museum Kata Andrea Hirata — pusat kesenian sastra yang kaya corak piringan klasik berwarna puitis dramatis.",
+    lokasi: "Gantung, Kabupaten Belitung Timur",
+    estimasi_biaya: "Rp5,000 (Replika SD) & Rp50,000 (Museum Kata - gratis buku saku)",
+    jam_buka: "09:00 AM - 05:00 PM",
+    tips: "Bawa kamera terbaik Anda untuk berfoto di ruang-ruang sastra estetik dan abadikan aura kenangan perjuangan mengejar impian masa kecil Laskar Pelangi.",
+    kategori: "spot_foto",
+    wilayah: "Belitung"
   }
 ];
-
 // --- Real Seed Culinary Data ---
 const defaultKuliner = [
   {
@@ -265,7 +363,7 @@ const defaultKuliner = [
     nama: "Mie Belitung Atep",
     deskripsi: "Mie kuning basah legendaris disiram kuah udang kental yang manis gurih beraroma rempah bumbu, dilengkapi toge, udang rebus, potongan tahu, emping, berwadahkan daun simpor alam.",
     tipe: "sarapan",
-    estimasi_biaya: "Rp 20.000 per porsi",
+    estimasi_biaya: "Rp15,000 - Rp30,000 per portion",
     rekomendasi_tempat: "Warung Mie Belitung Atep, Tanjung Pandan",
     tips: "Selalu pesan Es Jeruk Kunci khas Belitung pendamping mie ini untuk menetralisir kemanisan udang bumbu di lidah.",
     wilayah: "Belitung"
@@ -329,6 +427,354 @@ const defaultKuliner = [
     rekomendasi_tempat: "Penjual Gerobak Kuliner Sore di Pantai Tanjung Pendam",
     tips: "Makanan cemilan ini sangat cocok dicicipi saat malam hari bersantai membakar sate cumi.",
     wilayah: "Belitung"
+  },
+  {
+    id: "k9",
+    nama: "Asui Seafood",
+    deskripsi: "Asui Seafood is one of the most popular and legendary seafood restaurants in Pangkalpinang. This restaurant serves a wide variety of fresh Bangka-style seafood dishes with rich and flavorful local spices.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp50,000 - Rp200,000",
+    rekomendasi_tempat: "Jalan Yang Zubaidah No. 242, Pangkalpinang",
+    tips: "Casual dining atmosphere suitable for family meals or business gatherings.",
+    rating: 4.3,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Seafood Restaurant",
+    highlights: [
+      "Serves fresh local fish, crab, and squid dishes.",
+      "Casual dining atmosphere suitable for family meals or business gatherings.",
+      "Features authentic Bangka-style original seasonings."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k10",
+    nama: "Restaurant Seafood Mr. Adox",
+    deskripsi: "Restaurant Seafood Mr. Adox offers various seafood menu selections with a spacious and comfortable dining area. It is a favorite destination for both tourists and local residents because of its fresh seafood ingredients.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp75,000 - Rp150,000",
+    rekomendasi_tempat: "Jalan Raya Pasir Padi, Pangkalpinang",
+    tips: "Spacious restaurant area with facilities suitable for large groups.",
+    rating: 4.6,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Seafood Restaurant",
+    highlights: [
+      "Signature dishes include grilled fish, prawns, and Bangka-style Lempah Kuning.",
+      "Spacious restaurant area with facilities suitable for large groups.",
+      "Strategically located on a main road and easily accessible."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k11",
+    nama: "SEAFOOD BANG GOOD",
+    deskripsi: "SEAFOOD BANG GOOD is an excellent option for visitors looking for affordable seafood dishes without compromising taste quality. It is highly recommended for a casual dinner experience.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp50,000 - Rp75,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Friendly service highly appreciated by visitors.",
+    rating: 4.3,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Restaurant",
+    highlights: [
+      "Affordable and budget-friendly seafood menu options.",
+      "Wide variety of sauce and seasoning choices.",
+      "Friendly service highly appreciated by visitors."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k12",
+    nama: "Tsahang La Mira",
+    deskripsi: "Tsahang La Mira integrates a modern restaurant concept with traditional Bangka cuisine, presenting dynamic local flavors in an elegant manner.",
+    tipe: "halal",
+    estimasi_biaya: "Rp50,000 - Rp150,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Clean, aesthetic, and comfortable dining atmosphere.",
+    rating: 4.5,
+    jam_buka: "Open daily — closes at 11:00 PM",
+    kategori: "Restaurant",
+    highlights: [
+      "Signature local dishes include Rusip, Lempah Kulat, and fresh seafood specialties.",
+      "Clean, aesthetic, and comfortable dining atmosphere.",
+      "Open until late evening, especially on weekends."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k13",
+    nama: "Gale-Gale Seafood Bangka",
+    deskripsi: "Gale-Gale Seafood Bangka is widely known for its exceptionally high ratings due to the consistency of its seafood flavors. Uniquely, this restaurant starts operating from the morning.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp75,000 - Rp100,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Opens from 08:00 AM, making it suitable for early heavy meals.",
+    rating: 4.9,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Family Restaurant",
+    highlights: [
+      "Complete seafood menu with strong authentic Bangka seasonings.",
+      "Opens from 08:00 AM, making it suitable for early heavy meals.",
+      "Maintains excellent cleanliness and seafood freshness standards."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k14",
+    nama: "Warung Yok Ngopi",
+    deskripsi: "Warung Yok Ngopi offers a relaxing morning atmosphere with traditional local filtered coffee and various snacks perfect for breakfast.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp25,000 - Rp50,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Relaxed open-space atmosphere ideal for starting the day.",
+    rating: 4.2,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Café",
+    highlights: [
+      "Serves traditional black filtered coffee and legendary milk coffee.",
+      "Variety of Bangka traditional cakes and snacks.",
+      "Relaxed open-space atmosphere ideal for starting the day."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k15",
+    nama: "Tung Tau Semabung",
+    deskripsi: "Tung Tau Semabung is a branch of one of the most legendary coffee shops in Bangka, famous since the colonial era for its old-style toast and traditional filtered coffee.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp25,000 - Rp50,000",
+    rekomendasi_tempat: "Semabung, Pangkalpinang",
+    tips: "Affordable prices with consistently authentic flavors.",
+    rating: 4.3,
+    jam_buka: "Open 24 Hours",
+    kategori: "Coffee Shop",
+    highlights: [
+      "Open 24 hours, making it a highly flexible breakfast destination.",
+      "Iconic menu items include Egg Toast, homemade Kaya Toast, and authentic Kopi O.",
+      "Affordable prices with consistently authentic flavors."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k16",
+    nama: "Kolabore",
+    deskripsi: "Kolabore offers a modern gathering concept with coffee and food selections suitable for lunch, remote work, or relaxing in the afternoon.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp50,000 - Rp75,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Note: Opens from 11:00 AM (except Fridays at 01:00 PM).",
+    rating: 4.6,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Coffee Shop",
+    highlights: [
+      "Modern interior design suitable for younger visitors and remote workers.",
+      "Wide variety of modern coffee and snack options.",
+      "Opens from 11:00 AM (except Fridays at 01:00 PM)."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k17",
+    nama: "Kopitiam",
+    deskripsi: "This Kopitiam in the Air Itam area provides a practical and comfortable atmosphere for enjoying warm traditional filtered coffee in the morning.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp25,000 - Rp50,000",
+    rekomendasi_tempat: "Air Itam, Pangkalpinang",
+    tips: "Very affordable and worker-friendly prices.",
+    rating: 4.8,
+    jam_buka: "Open daily — closes at 10:00 PM",
+    kategori: "Restaurant",
+    highlights: [
+      "Simple breakfast menu with traditional tea and filtered coffee.",
+      "Strategic location near office areas in Air Itam.",
+      "Very affordable and worker-friendly prices."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k18",
+    nama: "Rumah Lama Kopi",
+    deskripsi: "Rumah Lama Kopi offers a warm nostalgic atmosphere with a vintage house concept, perfect for enjoying traditional morning coffee.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp1 - Rp25,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Traditional snack selections ideal for morning conversations.",
+    rating: 4.9,
+    jam_buka: "Open daily — closes at 11:59 PM",
+    kategori: "Coffee Shop",
+    highlights: [
+      "Classic traditional house ambiance that feels calm and relaxing.",
+      "Opens from 07:00 AM with strong aromatic filtered coffee.",
+      "Traditional snack selections ideal for morning conversations."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k19",
+    nama: "Mie Ayam Bangka Haji Aziz",
+    deskripsi: "One of the most popular halal Bangka noodle spots. The noodles are homemade, chewy, topped with generous minced chicken, and served with savory broth.",
+    tipe: "halal",
+    estimasi_biaya: "Rp15,000 - Rp25,000",
+    rekomendasi_tempat: "Pangkalpinang, Bangka",
+    tips: "Simple local eatery that is always crowded in the morning with very affordable prices.",
+    rating: 4.7,
+    jam_buka: "06:00 AM - 12:00 PM",
+    kategori: "Noodle Shop",
+    highlights: [
+      "Homemade, chewy, high-quality noodles.",
+      "Topped with delicious generous minced chicken.",
+      "Served with savory warm broth."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k20",
+    nama: "Tahu Kok & Mie Belinyu",
+    deskripsi: "Tahu Kok is a must-try Bangka culinary dish consisting of fish tofu soup, fried fish cakes (fukian), and boiled fish balls served in fresh seafood broth.",
+    tipe: "halal",
+    estimasi_biaya: "Rp20,000 - Rp35,000",
+    rekomendasi_tempat: "Kampung Bintang & Belinyu area, Bangka",
+    tips: "Many budget-friendly halal stalls in this area serve fresh mackerel-based dishes.",
+    rating: 4.6,
+    jam_buka: "07:00 AM - 02:00 PM",
+    kategori: "Traditional Eatery",
+    highlights: [
+      "Consists of fish tofu soup, fried fish cakes (fukian), and boiled fish balls.",
+      "Served in fresh hot seafood broth.",
+      "Highly budget-friendly and fully halal."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k21",
+    nama: "Otak-Otak Bangka",
+    deskripsi: "A classic Bangka breakfast or snack made from grilled mackerel fish cake served warm with three vinegar sauce options: fermented soybean vinegar (tauco), shrimp paste vinegar, and sweet spicy vinegar.",
+    tipe: "murah meriah",
+    estimasi_biaya: "Rp3,000 - Rp4,000 per piece",
+    rekomendasi_tempat: "Otak-Otak Amui, Pangkalpinang, Bangka",
+    tips: "Relaxed food stalls with very affordable prices, allowing visitors to enjoy as much as they want.",
+    rating: 4.8,
+    jam_buka: "09:00 AM - 09:00 PM",
+    kategori: "Snack Stall",
+    highlights: [
+      "Made from fresh grilled mackerel fish cake.",
+      "Served warm in folded banana leaves.",
+      "Comes with three distinct sauce options: tauco, shrimp paste, and sweet-spicy vinegar."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k22",
+    nama: "Warkop Kong Djie",
+    deskripsi: "Originally established in Belitung in 1943, the Pangkalpinang branch serves the same authentic filtered coffee using a signature tall copper kettle. The smoky charcoal aroma is highly distinctive.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp15,000 - Rp30,000",
+    rekomendasi_tempat: "Warkop Kong Djie Branch, Pangkalpinang",
+    tips: "A very local and authentic gathering place for all generations since early morning.",
+    rating: 4.5,
+    jam_buka: "06:00 AM - 10:00 PM",
+    kategori: "Traditional Coffee Shop",
+    highlights: [
+      "Authentic filtered coffee using high brass or copper teko kettle.",
+      "Smoky charcoal aroma that is highly distinctive.",
+      "Local and welcoming atmosphere for all generations."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k23",
+    nama: "Warung Kopi Kelekak",
+    deskripsi: "Combines a local coffee shop concept with strong Bangka cultural influences. Besides excellent filtered coffee, they also serve traditional cakes such as rampa-rampa, jongkong, and talam at affordable prices.",
+    tipe: "murah meriah",
+    estimasi_biaya: "Rp2,000 - Rp15,000",
+    rekomendasi_tempat: "Warung Kopi Kelekak, Pangkalpinang",
+    tips: "Enjoy traditional cakes under cozy vintage wooden setups.",
+    rating: 4.6,
+    jam_buka: "06:35 AM - 06:00 PM",
+    kategori: "Traditional Café",
+    highlights: [
+      "Pairs filtered coffee with traditional local snacks.",
+      "Serves authentic rampa-rampa, jongkong, and talam cakes.",
+      "Strong Bangka cultural influences and design."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k24",
+    nama: "Lempah Kuning Muara",
+    deskripsi: "Located near the harbor/coastal area, this place is famous for its extremely fresh fish, commonly using snapper or ketarap fish. Visitors can directly choose their fish before it is freshly cooked.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp30,000 - Rp60,000",
+    rekomendasi_tempat: "Pelabuhan Pasir Padi / Muara area, Pangkalpinang",
+    tips: "A simple semi-open dining place focused on delivering bold authentic flavors at prices much more affordable than large seafood restaurants.",
+    rating: 4.7,
+    jam_buka: "09:00 AM - 05:00 PM",
+    kategori: "Eatery Shop",
+    highlights: [
+      "Extremely fresh fish straight from the coastal harbor.",
+      "Choose your own snapper or ketarap fish.",
+      "Simple, semi-open dining space focused on bold authentic spices."
+    ],
+    wilayah: "Bangka"
+  },
+  {
+    id: "k25",
+    nama: "RM Belitong Timpo Duluk",
+    deskripsi: "Sajian legendaris dalam tradisi makan bersama khas adat Melayu Belitung bernama 'Makan Bedulang' menggunakan dulang kuningan berpenutup saji merah berisi aneka piring lauk murni nusantara.",
+    tipe: "halal",
+    estimasi_biaya: "Bedulang Package: Rp150,000 - Rp250,000 (untuk 4 orang)",
+    rekomendasi_tempat: "RM Belitong Timpo Duluk, Jalan Letjan Pilang, Tanjung Pandan",
+    tips: "Nikmati pengalaman makan bedulang otentik bersama teman atau keluarga dengan lauk gangan segar, sate cumi, dan sambal serai.",
+    wilayah: "Belitung"
+  },
+  {
+    id: "k26",
+    nama: "Kampong Dedaun",
+    deskripsi: "Sajian kuliner khas Belitung dinikmati langsung di area bersantai beanbag tepi pantai pasir putih bernaungkan pepohonan hijau rindang.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp50,000 - Rp150,000 per orang",
+    rekomendasi_tempat: "Kampong Dedaun, Sijuk, Belitung",
+    tips: "Sangat asyik berkunjung sore hari memesan kelapa muda segar peneman nikmatnya hidangan ikan kuah tim bumbu sereh.",
+    wilayah: "Belitung"
+  },
+  {
+    id: "k27",
+    nama: "Rumah Makan Raja Seafood Belitung",
+    deskripsi: "Restoran hidangan laut populer bersertifikat bersih di Tanjung Pandan dengan sajian Gangan Karang (sup ikan bumbu nanas asam pedas) legendaris dambaan wisatawan.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp40,000 - Rp120,000 per menu item",
+    rekomendasi_tempat: "RM Raja Seafood, Tanjung Pandan, Belitung",
+    tips: "Ikan ketarap segar yang dimasak bumbu kuning gangan adalah primadona wajib dambaan pencinta rasa lokal.",
+    wilayah: "Belitung"
+  },
+  {
+    id: "k28",
+    nama: "Raja Rasa Seafood",
+    deskripsi: "Tempat makan seafood pinggir pantai Sijuk menyajikan kelembutan ikan bakar berbalut bumbu otentik khas tangkapan nelayan lokal harian.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp35,000 - Rp90,000 per portion",
+    rekomendasi_tempat: "Raja Rasa Seafood, Sijuk, Belitung",
+    tips: "Cicipi renyahnya cumi goreng tepung krispi dan kepiting pedas padang seusai bermanja membelah air laut.",
+    wilayah: "Belitung"
+  },
+  {
+    id: "k29",
+    nama: "Batu Garuda Beach Club & Resto",
+    deskripsi: "Restoran berkonsep beach club tropikal modern berhadapan langsung dengan pulau beraliran Batu Garuda, menyajikan menu fusion western dan lokal lezat.",
+    tipe: "seafood",
+    estimasi_biaya: "Rp35,000 - Rp120,000",
+    rekomendasi_tempat: "Batu Garuda Beach Club, Pantai Tanjung Kelayang, Belitung",
+    tips: "Ini adalah spot paling fotogenik di Belitung untuk menghabiskan petang berlatar matahari terbenam sembari menikmat sajian pizza atau hidangan laut.",
+    wilayah: "Belitung"
+  },
+  {
+    id: "k30",
+    nama: "Kopi Kita Belitung",
+    deskripsi: "Cafe aesthetic industrial minimalis di kawasan pusat kota Tanjung Pandan, menyajikan kopi saring modern, espresso-based, latte art, dan camilan nikmat.",
+    tipe: "sarapan",
+    estimasi_biaya: "Rp20,000 - Rp45,000",
+    rekomendasi_tempat: "Kopi Kita Belitung, Tanjung Pandan",
+    tips: "Sangat representatif untuk tempat bersantai sejuk ber-AC mendinginkan tubuh di siang hari atau membuka laptop bekerja remote (WFC).",
+    wilayah: "Belitung"
   }
 ];
 
@@ -390,21 +836,66 @@ function writeDatabase(data: any) {
 // Ensure database file is ready upon start
 const db = readDatabase();
 
-// Sync database of kuliners to have correct 'wilayah' properties and match seed data
+// Sync database of kuliners to have correct 'wilayah' properties, content updates, and append new ones
 let dbUpdated = false;
 if (db.kuliners && Array.isArray(db.kuliners)) {
   db.kuliners = db.kuliners.map((k: any) => {
     const seedMatch = defaultKuliner.find(dk => dk.id === k.id);
-    if (seedMatch && (!k.wilayah || k.wilayah !== seedMatch.wilayah)) {
-      dbUpdated = true;
-      return { ...k, wilayah: seedMatch.wilayah };
+    if (seedMatch) {
+      // Synchronize properties if they differ from our newly updated seed definitions
+      if (
+        !k.wilayah || 
+        k.wilayah !== seedMatch.wilayah || 
+        k.nama !== seedMatch.nama || 
+        k.tipe !== seedMatch.tipe || 
+        k.estimasi_biaya !== seedMatch.estimasi_biaya || 
+        k.rekomendasi_tempat !== seedMatch.rekomendasi_tempat || 
+        k.tips !== seedMatch.tips ||
+        k.deskripsi !== seedMatch.deskripsi ||
+        k.rating !== seedMatch.rating ||
+        k.jam_buka !== seedMatch.jam_buka ||
+        k.kategori !== seedMatch.kategori ||
+        JSON.stringify(k.highlights) !== JSON.stringify(seedMatch.highlights)
+      ) {
+        dbUpdated = true;
+        return { ...k, ...seedMatch };
+      }
     }
     return k;
   });
+
+  // Also append any new seed culinary items that do not exist yet in database
+  defaultKuliner.forEach((dk: any) => {
+    const exists = db.kuliners.some((k: any) => k.id === dk.id);
+    if (!exists) {
+      db.kuliners.push(dk);
+      dbUpdated = true;
+    }
+  });
 }
 
-// In case the wisata seed data got new items, synchronize them without overwriting user changes
+// In case the wisata seed data got new items or updates, synchronize them
 if (db.wisata && Array.isArray(db.wisata)) {
+  db.wisata = db.wisata.map((w: any) => {
+    const seedMatch = defaultWisata.find(dw => dw.id === w.id);
+    if (seedMatch) {
+      if (
+        w.nama !== seedMatch.nama ||
+        w.deskripsi !== seedMatch.deskripsi ||
+        w.lokasi !== seedMatch.lokasi ||
+        w.estimasi_biaya !== seedMatch.estimasi_biaya ||
+        w.jam_buka !== seedMatch.jam_buka ||
+        w.tips !== seedMatch.tips ||
+        w.kategori !== seedMatch.kategori ||
+        w.wilayah !== seedMatch.wilayah
+      ) {
+        dbUpdated = true;
+        return { ...w, ...seedMatch };
+      }
+    }
+    return w;
+  });
+
   defaultWisata.forEach((dw: any) => {
     const exists = db.wisata.some((w: any) => w.id === dw.id);
     if (!exists) {
@@ -779,13 +1270,32 @@ app.post('/api/budget/estimate', authenticateToken, async (req: any, res: any) =
           model: 'gemini-3.5-flash',
           contents: prompt,
           config: {
-            responseMimeType: 'application/json'
+            responseMimeType: 'application/json',
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                tips_hemat: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING }
+                }
+              },
+              required: ["tips_hemat"]
+            }
           }
         });
 
         if (response.text) {
-          const parsed = JSON.parse(response.text.trim());
-          if (parsed.tips_hemat) {
+          let cleanText = response.text.trim();
+          if (cleanText.startsWith("```json")) {
+            cleanText = cleanText.substring(7);
+          }
+          if (cleanText.endsWith("```")) {
+            cleanText = cleanText.substring(0, cleanText.length - 3);
+          }
+          cleanText = cleanText.trim();
+
+          const parsed = JSON.parse(cleanText);
+          if (parsed && Array.isArray(parsed.tips_hemat)) {
             return res.json({
               packages,
               tips_hemat: parsed.tips_hemat
@@ -814,11 +1324,17 @@ app.post('/api/kuliner', (req, res) => {
     const currentDb = readDatabase();
 
     let list = currentDb.kuliners;
+    
+    // Filter by island (Bangka or Belitung) if provided
+    if (wilayah) {
+      list = list.filter(k => k.wilayah && k.wilayah.toLowerCase() === wilayah.toLowerCase());
+    }
+
     if (preferensi && preferensi !== 'semua') {
       list = list.filter(k => k.tipe.toLowerCase() === preferensi.toLowerCase());
     }
 
-    const limit = (tier && tier.toLowerCase() === 'premium') ? 10 : 3;
+    const limit = (tier && tier.toLowerCase() === 'premium') ? 35 : 3;
     const result = list.slice(0, limit);
 
     res.json({
@@ -1050,7 +1566,7 @@ app.post('/api/trip/plan', authenticateToken, async (req: any, res: any) => {
 // 10. AI Chat Assistant (Premium Only)
 app.post('/api/chat', authenticateToken, async (req: any, res: any) => {
   try {
-    const { pertanyaan, nama_user, wilayah, budget } = req.body;
+    const { pertanyaan, nama_user, wilayah, budget, history, tier, persona, interest, budgetTone, userMood } = req.body;
     if (!pertanyaan) {
       return res.status(400).json({ error: 'Pertanyaan tidak boleh kosong.' });
     }
@@ -1058,6 +1574,11 @@ app.post('/api/chat', authenticateToken, async (req: any, res: any) => {
     const userName = nama_user || req.user.username || 'Traveler';
     const region = wilayah || 'Bangka Belitung';
     const totalBudget = budget ? `Rp ${parseInt(budget).toLocaleString('id-ID')}` : 'ekonomis';
+    const userPersona = persona || 'Smart Explorer';
+    const userInterest = interest || 'Menyeluruh';
+    const userBudgetTone = budgetTone || 'Seimbang';
+    const currentMood = userMood || 'Cheerful & Excited';
+    const membershipTier = tier || 'premium'; // Default to premium for this route
 
     const cleanQuestion = pertanyaan.toLowerCase();
     const isOutOfTopic = !cleanQuestion.includes('wisata') && !cleanQuestion.includes('pantai') && 
@@ -1068,26 +1589,28 @@ app.post('/api/chat', authenticateToken, async (req: any, res: any) => {
                          !cleanQuestion.includes('itinerary') && !cleanQuestion.includes('kopi') &&
                          !cleanQuestion.includes('lempah') && !cleanQuestion.includes('mie') &&
                          !cleanQuestion.includes('transport') && !cleanQuestion.includes('rekomendasi') &&
-                         !cleanQuestion.includes('halo') && !cleanQuestion.includes('hi') && !cleanQuestion.includes('pagi');
+                         !cleanQuestion.includes('halo') && !cleanQuestion.includes('hi') && !cleanQuestion.includes('pagi') &&
+                         !cleanQuestion.includes('siang') && !cleanQuestion.includes('malam') && !cleanQuestion.includes('sore') &&
+                         !cleanQuestion.includes('cuaca') && !cleanQuestion.includes('sunset') && !cleanQuestion.includes('tips');
 
     if (isOutOfTopic) {
       return res.json({
-        jawaban: `Halo ${userName}! Saya adalah pemandu wisata resmi LocalTrip Babel yang berdedikasi tinggi membantu Anda mengeksplorasi keindahan Bangka Belitung. 😊\n\nMengingat fokus utama saya, mari kita bincangkan topik seputar pariwisata, rahasia kuliner sedap Lempah Kuning, pantai eksotis berbatu granit, maupun penyusunan rute trip seru di Babel saja ya!\n\nAda destinasi indah di Bangka atau Belitung mana yang ingin Anda kepoin hari ini?`
+        jawaban: `Halo Kak ${userName}! Saya adalah BabelGuide PRO, asisten wisata & concierge virtual resmi dari LocalTrip Babel. 😊\n\nMengingat fokus keilmuan lokal saya, mari bincangkan topik seputar pariwisata, kuliner lezat Lempah Kuning, pantai eksotis berbatu granit raksasa di Belitung, maupun rute penyusunan itinerary khusus di Bangka Belitung saja ya!\n\nApakah ada lokasi wisata indah atau kuliner khas di Bangka atau Belitung yang ingin Kakak tanyakan?`
       });
     }
 
     const ai = getGeminiClient();
     if (!ai) {
       // Fallback response with beautiful helpful local copy
-      let fallbackText = `Halo Kak ${userName}! Senang sekali bisa membantu merencanakan liburanmu ke wilayah ${region}. `;
+      let fallbackText = `Halo Kak ${userName}! Senang sekali bisa membantu merencana liburan Kakak ke wilayah ${region}. `;
       if (cleanQuestion.includes('pantai')) {
-        fallbackText += `Untuk pantai, rekomendasi utama di Belitung sudah pasti Pantai Tanjung Tinggi yang sangat legendaris dengan bebatuan batu granit raksasanya laksana latar film Laskar Pelangi. Di Bangka, cobalah mampir ke Pantai Parai Tenggiri di Sungailiat yang ombaknya tenang dan tosnya air laut sangat bersih. `;
+        fallbackText += `Untuk kategori pantai eksotis, rekomendasi utama di Belitung adalah Pantai Tanjung Tinggi (Pantai Laskar Pelangi) dengan bebatuan granit purba raksasa yang memesona, atau Pantai Tanjung Kelayang untuk titik perahu penyeberangan island-hopping. Di Bangka, cobalah singgah ke Pantai Parai Tenggiri di Sungailiat yang air lautnya toska berkilau dengan bebatuan megah serupa. `;
       } else if (cleanQuestion.includes('makan') || cleanQuestion.includes('kuliner') || cleanQuestion.includes('lempah') || cleanQuestion.includes('mie')) {
-        fallbackText += `Terkait sajian kuliner lezat yang wajib dicoba, usahakan tidak terlewat menyantap Mie Belitung Atep di Tanjung Pandan berbungkus daun simpor alami atau masakan Lempah Kuning Ikan khas Bangka yang menggunakan kuah terasi mangga muda pedas menantang di Pangkalpinang! `;
+        fallbackText += `Terkait kuliner legendaris khas Babel yang wajib dicoba, pastikan Kakak mencicipi Mie Belitung Atep yang disiram kuah kental kaldu udang dibalut daun simpor segar di Tanjung Pandan, atau lezatnya sup Lempah Kuning dengan ikan tenggiri bumbu kunyit terasi nan menggugah selera di Pangkalpinang! `;
       } else {
-        fallbackText += `Bangka Belitung menawarkan sejuta harmoni alam pantai pasir seputih salju dan kearifan masyarakat lokal yang ramah. Berbekal dana ${totalBudget}, Kakak sudah bisa mendapatkan fasilitas rental sepeda motor/mobil harian untuk menjelajahi keindahan desa wisata tepi barat secara fleksibel. `;
+        fallbackText += `Bangka Belitung menyimpan keindahan pantai laksana surga dunia dan keramahan lokal yang tulus. Dengan preferensi gaya ${userPersona} dan minat ${userInterest}, kami rekomendasikan Kakak menjelajahi rute darat atau menyewa kendaraan harian agar keliling pulau terasa bebas dan menakjubkan. `;
       }
-      fallbackText += `\n\nSilakan tanyakan info lebih detail mengenai tiket masuk, lokasi berfoto estetik, maupun warung makan seafood nikmat ramah kantong lainnya ya Kak ${userName}!`;
+      fallbackText += `\n\nSilakan tanyakan info lebih spesifik mengenai tiket, jam buka, atau kuliner khas lainnya kepada saya ya Kak ${userName}!`;
       return res.json({ jawaban: fallbackText });
     }
 
@@ -1103,45 +1626,72 @@ app.post('/api/chat', authenticateToken, async (req: any, res: any) => {
         relevantKuliners = relevantKuliners.filter(k => k.wilayah && k.wilayah.toLowerCase() === regionFilter.toLowerCase());
       }
 
-      // Format a concise catalog of up to 45 spots so we don't exceed model limits while remaining extremely detailed
-      const spotSummary = relevantSpots.map(w => `- ${w.nama} (Kategori: ${w.kategori}, Wilayah: ${w.wilayah}, Lokasi: ${w.lokasi}, Biaya: ${w.estimasi_biaya}, Jam Buka: ${w.jam_buka}, Tips: ${w.tips})`).slice(0, 45).join('\n');
+      // Format clean listings from db to keep LLM context perfectly factual and rich
+      const spotSummary = relevantSpots.map(w => `- ${w.nama} (Kategori: ${w.kategori}, Wilayah: ${w.wilayah}, Lokasi: ${w.lokasi}, Biaya: ${w.estimasi_biaya}, Jam Buka: ${w.jam_buka}, Tips: ${w.tips}, Deskripsi: ${w.deskripsi})`).slice(0, 45).join('\n');
       const kulinerSummary = relevantKuliners.map(k => `- ${k.nama} (Wilayah: ${k.wilayah}, Tipe: ${k.tipe}, Biaya: ${k.estimasi_biaya}, Rekomendasi Tempat: ${k.rekomendasi_tempat}, Deskripsi: ${k.deskripsi})`).join('\n');
+
+      // Build structured model content history safely
+      let contents: any[] = [];
+      if (history && Array.isArray(history)) {
+        contents = history.map((h: any) => ({
+          role: h.sender === 'user' ? 'user' : 'model',
+          parts: [{ text: h.text || '' }]
+        }));
+      }
+      contents.push({ role: 'user', parts: [{ text: pertanyaan }] });
+
+      const systemInstruction = `
+        Kamu adalah "BabelGuide PRO" - asisten perjalanan virtual AI premium, pramuwisata lokal senior, dan concierge travel mewah eksklusif dari platform "LocalTrip Babel".
+        Bicaralah bagaikan pakar pariwisata lokal Bangka Belitung yang sangat hangat, ramah, penolong, berpotensi memberikan rasa nyaman, dan peka secara emosional (emotional intelligence).
+
+        Data Sesi Wisatawan yang sedang Kakak layani saat ini:
+        - Nama Wisatawan: ${userName}
+        - Wilayah Liburan: ${region}
+        - Budget Tersedia: ${totalBudget}
+        - Status Keanggotaan: ${membershipTier === 'premium' ? '👑 PREMIUM (VIP ACCESS)' : 'FREE USER'}
+        - Persona Gaya Wisata: ${userPersona} (misal: Elite Jetsetter, Healing Wanderer, Cultural Explorer, Adventure Trailblazer, Backpackers, Families, Couples, Content Creators)
+        - Minat Utama & Fokus: ${userInterest}
+        - Nada Anggaran: ${userBudgetTone}
+        - Suasana Hati Pelancong: ${currentMood}
+
+        Berikut adalah Pangkalan Data Resmi Berlisensi tentang destinasi wisata di ${region}:
+        ${spotSummary}
+
+        Berikut adalah Pangkalan Data Resmi Berlisensi tentang kuliner khas Bangka Belitung:
+        ${kulinerSummary}
+
+        Aturan Pelayanan AI BabelGuide:
+        1. **Keramahan Lokal**: Gunakan panggilan hangat "Kak ${userName}" secara berkala dan alami. Hadirkan nuansa batin ramah, penuh perhatian, dan tulus.
+        2. **Gaya Wisata & Penyesuaian Emosional**: Sesuaikan sapaan & rekomendasi dengan Suasana Hati (${currentMood}) dan Persona (${userPersona}).
+           - Jika berjiwa petualang (Adventure Trailblazer), dorong eksplorasi bebatuan granit Pantai Penyabong, panjat bukit, atau snorkeling di Pulau Lengkuas.
+           - Jika pencinta kedamaian/penyembuhan diri (Healing Wanderer), tonjolkan kedamaian mercusuar jernih, keasrian Bangka Botanical Garden, atau Danau Kaolin yang tenang laksana awan susu.
+           - Jika bepergian keluarga (Families), sarankan wahana aman seperti Pantai Tongaci penangkaran penyu atau Pantai Matras berpasir datar lebar.
+           - Jika luxury/romantis (Elite Jetsetter, Couples), rekomendasikan private boat hire, resort premium, atau candlelit dinner seafood tepi pantai.
+        3. **Hak Istimewa Premium (Exclusive Insights)**: Sebutkan informasi rahasia lokal pelancongan (hidden gems lokal, jalan pintas bebas macet, waktu sepi terbaik tanpa kerumunan turis, restoran non-turistik yang luar biasa, kuliner legendaris tersembunyi). Berikan detail instan seperti operational hours, estimasi budget riil, serta tips and trik berwisata aman di Babel.
+        4. **Aliran Chat Interaktif**: Akhiri respon dengan pertanyaan penutup yang memantik ide lanjutan, menstimulasi mereka mengajukan pertanyaan berikutnya atau menawarkan pembuatan rencana perjalanan/itinerary interaktif mikro yang terpadu!
+        5. **Keindahan Format**: Jawab dalam format Markdown yang sangat elegan, bersih, terstruktur, dilengkapi bullet points ber-emoji, serta batasi sampai maksimal 3 paragraf pendek agar pas visualnya di smartphone layar ramping.
+        6. **Kejujuran Data**: Hanya rujuk nama destinasi dan restoran yang ada di Pangkalan Data Resmi berlisensi di atas untuk kebenaran navigasi.
+      `;
 
       const response = await ai.models.generateContent({
         model: 'gemini-3.5-flash',
-        contents: pertanyaan,
+        contents: contents,
         config: {
-          systemInstruction: `
-            Kamu adalah AI Assistant (pemandu wisata lokal ramah dan berpengetahuan luas) dari platform "LocalTrip Babel".
-            Nama user yang kamu layani saat ini adalah ${userName}.
-            Detail situasi user: Wilayah perjalanan saat ini: ${region}, Budget bepergian: ${totalBudget}.
-
-            Berikut adalah daftar riil destinasi wisata pariwisata berlisensi di database kita (${region}):
-            ${spotSummary}
-
-            Berikut adalah daftar riil menu kuliner tradisional khas yang berlisensi di database kita:
-            ${kulinerSummary}
-
-            Aturan wajib:
-            - Jawab dengan Bahasa Indonesia yang santun, ramah, dan penuh keramahan lokal (selalu gunakan sapaan sapaan hangat Kak ${userName}).
-            - Manfaatkan daftar wisata dan kuliner riil di atas untuk memberikan jawaban yang akurat, detail, dan mencantumkan keterangan biaya asli, lokasi, atau tips penting dari database.
-            - JANGAN merekomendasikan tempat fiktif atau lokasi di luar data di atas bila ditanya tentang rekomendasi spesifik.
-            - Batasi jawaban maksimal 3 paragraf pendek yang informatif, menarik, dan menyenangkan demi keterbacaan yang ringkas.
-            - Selalu sebutkan nama user "${userName}" di awal percakapan sapaan agar terasa personal.
-            - Jika ditanya di luar topik pariwisata Babel, alihkan kembali ke topik wisata atau kuliner dengan sopan, ceria, dan bersahabat.
-          `
+          systemInstruction: systemInstruction,
+          temperature: 0.9,
+          topP: 0.95
         }
       });
 
-      if (response.text) {
+      if (response && response.text) {
         return res.json({ jawaban: response.text });
       }
     } catch (apiErr) {
-      console.warn("Kesalahan panggilan chat Gemini:", apiErr);
+      console.warn("Kesalahan panggilan chat Gemini (Lanjut ke fallback lokal):", apiErr);
     }
 
     // Default return
-    res.json({ jawaban: `Halo ${userName}! Mohon maaf, koneksi asisten AI kami sedang mengalami penyesuaian jaringan. Namun demikian, pastikan Anda berkunjung ke Pulau Lengkuas yang cantik guna menyaksikan mercusuar kuno bergaya kolonial, serta mencicipi Mie Belitung Atep yang sangat manis gurih bumbu udangnya saat berkunjung ke Belitung ya!` });
+    res.json({ jawaban: `Halo Kak ${userName}! Terdapat sedikit penyesuaian lalu lintas satelit pada asisten virtual kami. Namun tenang saja, BabelGuide PRO menyarankan Kakak mampir ke Pantai Tanjung Tinggi di Belitung Barat guna melihat mahakarya batu granit raksasa di sepanjang pantai beralur tenang, serta menyantap Mie Belitung Atep hangat dengan siraman kaldu udang lezat bertemankan es jeruk kunci peras segar sore nanti!` });
 
   } catch (err: any) {
     res.status(500).json({ error: err.message });

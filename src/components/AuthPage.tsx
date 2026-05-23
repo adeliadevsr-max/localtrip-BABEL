@@ -68,33 +68,48 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-md w-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-8 relative">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
+      
+      {/* Premium Coastal Overlay Backdrop */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=1920&q=80" 
+          alt="Bangka Belitung Beach Atmosphere" 
+          className="w-full h-full object-cover opacity-[0.08] filter saturate-150 brightness-110"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#F1EDE1]/95 via-[#E8F1EF]/90 to-[#EAEFF2]/95 z-0"></div>
+        {/* Decorative tropical warm blurry circles */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-amber-400/5 blur-[100px]"></div>
+      </div>
+
+      <div className="max-w-md w-full bg-white/90 backdrop-blur-2xl rounded-3xl border border-slate-200/80 shadow-2xl overflow-hidden p-8 md:p-10 relative z-10 transition-all duration-300">
         
         {/* Header Back Link */}
         <button
           id="btn-auth-back"
           onClick={onBackToLanding}
-          className="absolute top-6 left-6 text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-1.5 text-xs font-semibold"
+          className="absolute top-6 left-6 text-slate-500 hover:text-emerald-750 transition-colors flex items-center gap-1.5 text-xs font-black uppercase tracking-wider cursor-pointer"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> Kembali
+          <ArrowLeft className="w-4 h-4 text-emerald-600" /> Kembali
         </button>
 
         <div className="text-center mt-6 mb-8">
-          <div className="mx-auto h-12 w-12 bg-emerald-50 rounded-2xl text-emerald-700 flex items-center justify-center mb-3 border border-emerald-100">
-            <Compass className="w-7 h-7" />
+          <div className="mx-auto h-12 w-12 bg-emerald-100/80 rounded-2xl text-emerald-800 flex items-center justify-center mb-4 border border-emerald-200/50">
+            <Compass className="w-6 h-6 animate-spin-slow" />
           </div>
-          <h2 className="text-2xl font-serif font-bold text-slate-900 tracking-tight">
-            {mode === 'login' ? 'Masuk ke Akun Anda' : 'Buat Akun Baru Anda'}
+          <h2 className="text-2xl sm:text-3xl font-serif font-black text-slate-900 tracking-tight leading-tight">
+            {mode === 'login' ? 'Silakan Masuk' : 'Daftar Penjelajah'}
           </h2>
-          <p className="mt-1.5 text-xs text-slate-500 font-sans">
-            LocalTrip Babel — Rekomendasi Pintar Bangka Belitung
+          <p className="mt-2 text-xs text-slate-500 font-sans font-medium">
+            babel.trip 🌊 Hub Premium Bangka Belitung
           </p>
         </div>
 
         {error && (
-          <div className="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-start gap-2.5 animate-bounce">
-            <AlertTriangle className="w-4 h-4 shrink-0" />
+          <div className="mb-6 p-4 rounded-2xl bg-rose-50 border border-rose-150 text-rose-700 text-xs flex items-start gap-2.5 animate-bounce font-medium">
+            <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-rose-600" />
             <span>{error}</span>
           </div>
         )}
@@ -106,10 +121,10 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
               <>
                 {/* Username */}
                 <div>
-                  <label htmlFor="reg-username" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Username</label>
+                  <label htmlFor="reg-username" className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-1.5 font-display">NAMA LENGKAP / ALIAS</label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                      <User className="w-4 h-4" />
+                      <User className="w-4 h-4 text-slate-400" />
                     </span>
                     <input
                       id="reg-username"
@@ -118,7 +133,7 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
                       required
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      className="block w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm transition-all"
+                      className="block w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 text-sm transition-all font-medium"
                       placeholder="Contoh: budi_traveler"
                     />
                   </div>
@@ -126,25 +141,25 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
 
                 {/* Account Tier Selector */}
                 <div className="mb-4">
-                  <span className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Pilih Keanggotaan</span>
+                  <span className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-1.5 font-display">PILIH TIPE AKUN</span>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       id="tile-tier-free"
                       type="button"
                       onClick={() => setTier('free')}
-                      className={`p-3.5 rounded-xl border text-left transition-all flex flex-col justify-between cursor-pointer ${tier === 'free' ? 'border-slate-800 bg-slate-50 text-slate-900 ring-2 ring-slate-800/15' : 'border-slate-200 hover:border-slate-300 text-slate-600'}`}
+                      className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${tier === 'free' ? 'border-slate-800 bg-slate-950 text-white shadow-md' : 'border-slate-205 bg-white/50 hover:border-slate-300 text-slate-600'}`}
                     >
-                      <span className="font-bold text-xs block">FREE</span>
-                      <span className="text-[10px] text-slate-500 mt-1 block leading-snug">Rekomendasi terbatas (maks 4 data)</span>
+                      <span className="font-black text-xs block uppercase">Free 🆓</span>
+                      <span className={`text-[9px] mt-1.5 block leading-relaxed font-sans ${tier === 'free' ? 'text-slate-300' : 'text-slate-500'}`}>Rekomendasi dasar & gallery terverifikasi</span>
                     </button>
                     <button
                       id="tile-tier-premium"
                       type="button"
                       onClick={() => setTier('premium')}
-                      className={`p-3.5 rounded-xl border text-left transition-all flex flex-col justify-between relative cursor-pointer ${tier === 'premium' ? 'border-emerald-600 bg-emerald-50/30 text-emerald-950 ring-2 ring-emerald-500/15' : 'border-slate-200 hover:border-slate-300 text-slate-600'}`}
+                      className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between relative cursor-pointer ${tier === 'premium' ? 'border-emerald-600 bg-emerald-900 text-white shadow-md' : 'border-slate-205 bg-white/50 hover:border-slate-300 text-slate-600'}`}
                     >
-                      <span className="font-bold text-xs flex items-center gap-1">PREMIUM <Sparkles className="w-3 h-3 text-emerald-600 fill-emerald-500" /></span>
-                      <span className="text-[10px] text-emerald-800 mt-1 block font-medium leading-snug">Rp29rb (Trip planner & AI Chat)</span>
+                      <span className="font-black text-xs flex items-center gap-1 uppercase">Premium ⭐</span>
+                      <span className={`text-[9px] mt-1.5 block leading-relaxed font-sans ${tier === 'premium' ? 'text-emerald-100' : 'text-slate-500'}`}>Rp29rb (Ai Chat & Budget Planner)</span>
                     </button>
                   </div>
                 </div>
@@ -153,10 +168,10 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
 
             {/* Email Address */}
             <div>
-              <label htmlFor="auth-email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Alamat Email</label>
+              <label htmlFor="auth-email" className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-1.5 font-display">ALAMAT EMAIL</label>
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-slate-400" />
                 </span>
                 <input
                   id="auth-email"
@@ -166,7 +181,7 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm transition-all"
+                  className="block w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 text-sm transition-all font-medium"
                   placeholder="traveler@contoh.com"
                 />
               </div>
@@ -174,10 +189,10 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
 
             {/* Password */}
             <div>
-              <label htmlFor="auth-password" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Kata Sandi</label>
+              <label htmlFor="auth-password" className="block text-[10px] font-extrabold text-slate-450 uppercase tracking-widest mb-1.5 font-display font-medium">KATA SANDI</label>
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                  <Lock className="w-4 h-4" />
+                  <Lock className="w-4 h-4 text-slate-400" />
                 </span>
                 <input
                   id="auth-password"
@@ -186,7 +201,7 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm transition-all"
+                  className="block w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 text-sm transition-all font-medium"
                   placeholder="Minimal 6 karakter"
                 />
               </div>
@@ -197,9 +212,9 @@ export default function AuthPage({ initialMode, initialTier = 'free', onAuthSucc
               id="btn-auth-submit"
               type="submit"
               disabled={loading}
-              className="w-full mt-6 py-3.5 px-4 font-semibold text-sm bg-slate-900 border-none rounded-xl text-white transition-all shadow-md active:scale-98/100 disabled:opacity-55"
+              className="w-full mt-6 py-4 px-4 font-black tracking-wider text-xs uppercase bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl transition-all shadow-md active:scale-95 disabled:opacity-55 cursor-pointer"
             >
-              {loading ? 'Memproses Akun...' : mode === 'login' ? 'Masuk Sekarang' : tier === 'premium' ? 'Lanjut ke Pembayaran Rp29.000' : 'Daftar Akun Gratis'}
+              {loading ? 'SINKRONISASI AKUN...' : mode === 'login' ? 'MASUK KE PORTAL' : tier === 'premium' ? 'LANJUT KE PEMBAYARAN RP29RB' : 'DAFTAR AKUN GRATIS'}
             </button>
           </form>
         ) : (

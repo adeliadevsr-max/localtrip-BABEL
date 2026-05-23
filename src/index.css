@@ -1,22 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --background: #FCFAF7; /* Luxurious warm white / sand-beige hint */
+  --text: #1E2533; /* Elegant charcoal slate */
+  --card-bg: #FFFFFF;
+  --card-border: rgba(213, 189, 175, 0.28); /* Soft clay/sand muted borders */
+  --text-muted: #5D697C;
+  --shadow-color: rgba(26, 30, 40, 0.03);
+  --accent-gold: #C5A880; /* Soft gold */
+  --accent-teal: #1D3F37; /* Muted tropical green */
+  --accent-ocean: #0B2545; /* Deep ocean blue */
+}
+
+.dark {
+  --background: #0A0D14; /* Sophisticated deep maritime background */
+  --text: #F1ECE4; /* Warm tropical white */
+  --card-bg: #11151F; /* Charcoal navy slate */
+  --card-border: rgba(197, 168, 128, 0.12); /* Subtle delicate gold accent borders */
+  --text-muted: #8E9BAE;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --accent-gold: #D4AF37; /* Burnished gold */
+  --accent-teal: #2A4F44; /* Deep jade forest green */
+  --accent-ocean: #152E46; /* Navy reef blue */
+  color-scheme: dark;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #F9FAFB;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Beautiful custom smooth travel planner animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.96) translateY(8px);
+    transform: scale(0.97) translateY(12px);
   }
   to {
     opacity: 1;
@@ -31,15 +60,50 @@ body {
   }
   to {
     opacity: 0;
-    transform: scale(0.96) translateY(8px);
+    transform: scale(0.97) translateY(12px);
   }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-out {
-  animation: fadeOut 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeOut 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Soft custom scrollbar for Gen-Z clean design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-teal {
+  background: rgba(204, 251, 241, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
 

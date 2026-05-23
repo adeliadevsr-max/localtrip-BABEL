@@ -31,6 +31,11 @@ export interface KulinerItem {
   estimasi_biaya: string;
   rekomendasi_tempat: string;
   tips: string;
+  rating?: number;
+  jam_buka?: string;
+  kategori?: string;
+  highlights?: string[];
+  wilayah?: 'Bangka' | 'Belitung';
 }
 
 export interface ItineraryDay {

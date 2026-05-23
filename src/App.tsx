@@ -19,6 +19,25 @@ export default function App() {
   const [user, setUser] = useState<{ id: string; username: string; email: string; tier: 'free' | 'premium' } | null>(null);
   const [token, setToken] = useState<string | null>(null);
 
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem('localtrip_babel_dark_mode') === 'true';
+  });
+
+  // Apply dark class and metadata
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+      document.body.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      document.body.classList.remove('dark');
+      root.removeAttribute('data-theme');
+    }
+    localStorage.setItem('localtrip_babel_dark_mode', String(darkMode));
+  }, [darkMode]);
+
   // Restore session from localStorage on load
   useEffect(() => {
     const savedToken = localStorage.getItem('localtrip_babel_token');
@@ -83,11 +102,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-950 font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 selection:bg-emerald-500/20 selection:text-emerald-950 font-sans transition-colors duration-350">
       {view === 'landing' && (
         <LandingPage 
           onNavigateToAuth={handleNavigateToAuth}
           onExploreAnonymously={handleExploreAnonymously}
+          darkMode={darkMode}
+          onToggleDarkMode={() => setDarkMode(!darkMode)}
         />
       )}
 
@@ -106,6 +127,8 @@ export default function App() {
           token={token || ''}
           onLogout={handleLogout}
           onUpgradeSuccess={handleUpgradeSuccess}
+          darkMode={darkMode}
+          onToggleDarkMode={() => setDarkMode(!darkMode)}
         />
       )}
 
@@ -114,6 +137,8 @@ export default function App() {
           user={user}
           token={token || ''}
           onLogout={handleLogout}
+          darkMode={darkMode}
+          onToggleDarkMode={() => setDarkMode(!darkMode)}
         />
       )}
     </div>
